@@ -1,9 +1,11 @@
+
+import javax.swing.ImageIcon;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author comp15
@@ -19,6 +21,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     public TelaPrincipal() {
         initComponents();
         setTitle("UnescRar");
+        //ImageIcon image = new ImageIcon("compa.png");
+        //setIconImage(image.getImage());
+
     }
 
     /**
@@ -113,7 +118,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addComponent(btsalvacomo)
                 .addGap(18, 18, 18)
                 .addComponent(btcompactar)
-                .addContainerGap(176, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,7 +130,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
 
         jTextArea.setColumns(20);
+        jTextArea.setLineWrap(true);
         jTextArea.setRows(5);
+        jTextArea.setWrapStyleWord(true);
         jTextArea.setVerifyInputWhenFocusTarget(false);
         jScrollPane2.setViewportView(jTextArea);
 
@@ -294,6 +301,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new TelaPrincipal().setVisible(true);
+
             }
         });
     }
