@@ -37,13 +37,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jSeparator1 = new javax.swing.JSeparator();
         jPanel1 = new javax.swing.JPanel();
-        btsalvar = new javax.swing.JButton();
         btnovo = new javax.swing.JButton();
         btabrir = new javax.swing.JButton();
         btcompactar = new javax.swing.JButton();
         btsalvacomo = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea = new javax.swing.JTextArea();
+        btsalvar = new javax.swing.JButton();
         JMenuBarra = new javax.swing.JMenuBar();
         jMenu = new javax.swing.JMenu();
         MenuItem_novo = new javax.swing.JRadioButtonMenuItem();
@@ -59,16 +59,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jPanel1.setEnabled(false);
 
-        btsalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/salvar 50x50.png"))); // NOI18N
-        btsalvar.addActionListener(l1);
-        btsalvar.setActionCommand("btsalvar");
-        btsalvar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btsalvarActionPerformed(evt);
-            }
-        });
-
         btnovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/novo 50x50.png"))); // NOI18N
+        btnovo.setText("Novo");
         btnovo.addActionListener(l1);
         btnovo.setActionCommand("btnovo");
         btnovo.addActionListener(new java.awt.event.ActionListener() {
@@ -78,6 +70,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
 
         btabrir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/abrir 50x50.png"))); // NOI18N
+        btabrir.setText("Abrir");
         btabrir.addActionListener(l1);
         btabrir.setActionCommand("btabrir");
         btabrir.addActionListener(new java.awt.event.ActionListener() {
@@ -87,6 +80,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
 
         btcompactar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/compactar 50x50.png"))); // NOI18N
+        btcompactar.setText("Compactar");
         btcompactar.addActionListener(l1);
         btcompactar.setActionCommand("btcompactar");
         btcompactar.addActionListener(new java.awt.event.ActionListener() {
@@ -96,6 +90,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
 
         btsalvacomo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/salvar como 50x50.png"))); // NOI18N
+        btsalvacomo.setText("Salvar Como");
         btsalvacomo.addActionListener(l1);
         btsalvacomo.setActionCommand("btsalvacomo");
         btsalvacomo.addActionListener(new java.awt.event.ActionListener() {
@@ -110,23 +105,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(btnovo)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btabrir)
-                .addGap(18, 18, 18)
-                .addComponent(btsalvar)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btsalvacomo)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btcompactar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnovo)
-            .addComponent(btabrir)
-            .addComponent(btsalvar)
-            .addComponent(btcompactar)
-            .addComponent(btsalvacomo)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(btnovo)
+                .addComponent(btabrir)
+                .addComponent(btsalvacomo)
+                .addComponent(btcompactar))
         );
 
         jTextArea.setColumns(20);
@@ -135,6 +128,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jTextArea.setWrapStyleWord(true);
         jTextArea.setVerifyInputWhenFocusTarget(false);
         jScrollPane2.setViewportView(jTextArea);
+
+        btsalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/salvar 50x50.png"))); // NOI18N
+        btsalvar.setText("Salvar");
+        btsalvar.addActionListener(l1);
+        btsalvar.setActionCommand("btsalvar");
+        btsalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btsalvarActionPerformed(evt);
+            }
+        });
 
         jMenu.setText("Acessando Arquivos ");
 
@@ -215,13 +218,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(btsalvar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jScrollPane2)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btsalvar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 557, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
