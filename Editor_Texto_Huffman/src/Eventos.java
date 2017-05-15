@@ -42,6 +42,8 @@ public class Eventos implements ActionListener {
 
         if (retorno == JFileChooser.APPROVE_OPTION) {
             file2 = new File(file.getSelectedFile().getAbsolutePath());
+            telaprincipal.N_A(file2);
+
             try {
                 FileReader fis = new FileReader(file2);
                 BufferedReader bis = new BufferedReader(fis);
@@ -56,9 +58,9 @@ public class Eventos implements ActionListener {
                 bis.close();
                 fis.close();
             } catch (FileNotFoundException e) {
-                
+
             } catch (IOException e) {
-                
+
             }
 
         }
@@ -70,13 +72,14 @@ public class Eventos implements ActionListener {
         file.setFileSelectionMode(JFileChooser.FILES_ONLY);
         FileNameExtensionFilter arquivo = new FileNameExtensionFilter("Arquivo de Texto", "txt");
         file.setFileFilter(arquivo);
-        int retorno = file.showOpenDialog(telaprincipal);
+        int retorno = file.showSaveDialog(telaprincipal);
         try {
             FileWriter escreve;
-            escreve = new FileWriter(file.getSelectedFile().getAbsolutePath());
-
+            escreve = new FileWriter(file.getSelectedFile().getAbsolutePath() + ".txt");
             escreve.write(telaprincipal.jTextArea.getText());
             escreve.close();
+            file2 = new File(file.getSelectedFile().getAbsolutePath() + ".txt");
+            telaprincipal.N_A(file2);
         } catch (Exception erro) {
 
         }
@@ -86,7 +89,7 @@ public class Eventos implements ActionListener {
 
         if (file2 == null) {
             salvarcomo();
-            file2 = null;
+
         } else {
 
             FileWriter arq = new FileWriter(file2);
@@ -109,6 +112,8 @@ public class Eventos implements ActionListener {
 
         if (escolha == 0) {
             telaprincipal.jTextArea.setText("");
+            file2 = null;
+            telaprincipal.N_A(file2);
         }
     }
 
@@ -134,13 +139,13 @@ public class Eventos implements ActionListener {
             sair();
 
         }
-        if ("novo".equals(e.getActionCommand())) {
+        if ("novo".equals(e.getActionCommand()) || "btnovo".equals(e.getActionCommand())) {
 
             novo();
             file2 = null;
         }
 
-        if ("abrir".equals(e.getActionCommand())) {
+        if ("abrir".equals(e.getActionCommand()) || "btabrir".equals(e.getActionCommand())) {
             try {
                 s.setArea(telaprincipal.jTextArea.getText());
                 if (s.area.isEmpty()) {
@@ -159,12 +164,12 @@ public class Eventos implements ActionListener {
 
             }
         }
-        if ("salvarcomo".equals(e.getActionCommand())) {
+        if ("salvarcomo".equals(e.getActionCommand()) || "btsalvacomo".equals(e.getActionCommand())) {
             file2 = null;
             salvarcomo();
 
         }
-        if ("salvar".equals(e.getActionCommand())) {
+        if ("salvar".equals(e.getActionCommand()) || "btsalvar".equals(e.getActionCommand())) {
             try {
                 salvar();
             } catch (IOException ex) {

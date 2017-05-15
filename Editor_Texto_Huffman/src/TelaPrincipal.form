@@ -8,8 +8,13 @@
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="jMenu">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Acessando Arquivos "/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Acessando Arquivo&quot;" type="code"/>
+            </Property>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JMenu()"/>
+          </AuxValues>
           <SubComponents>
             <MenuItem class="javax.swing.JRadioButtonMenuItem" name="MenuItem_novo">
               <Properties>
@@ -207,7 +212,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnovoActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="btnovo.addActionListener(l1);&#xa;btnovo.setActionCommand(&quot;btnovo&quot;);"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="btnovo.addActionListener(l);&#xa;btnovo.setActionCommand(&quot;btnovo&quot;);"/>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
@@ -222,7 +227,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btabrirActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="btabrir.addActionListener(l1);&#xa;btabrir.setActionCommand(&quot;btabrir&quot;);"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="btabrir.addActionListener(l);&#xa;btabrir.setActionCommand(&quot;btabrir&quot;);"/>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
@@ -237,7 +242,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btcompactarActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="btcompactar.addActionListener(l1);&#xa;btcompactar.setActionCommand(&quot;btcompactar&quot;);"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="btcompactar.addActionListener(l);&#xa;btcompactar.setActionCommand(&quot;btcompactar&quot;);"/>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
@@ -252,7 +257,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btsalvacomoActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="btsalvacomo.addActionListener(l1);&#xa;btsalvacomo.setActionCommand(&quot;btsalvacomo&quot;);"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="btsalvacomo.addActionListener(l);&#xa;btsalvacomo.setActionCommand(&quot;btsalvacomo&quot;);"/>
           </AuxValues>
         </Component>
       </SubComponents>
@@ -295,7 +300,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btsalvarActionPerformed"/>
       </Events>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="btsalvar.addActionListener(l1);&#xa;btsalvar.setActionCommand(&quot;btsalvar&quot;);"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="btsalvar.addActionListener(l);&#xa;btsalvar.setActionCommand(&quot;btsalvar&quot;);"/>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
     </Component>

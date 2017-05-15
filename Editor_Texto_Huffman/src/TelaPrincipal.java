@@ -1,4 +1,5 @@
 
+import java.io.File;
 import javax.swing.ImageIcon;
 
 /*
@@ -15,15 +16,26 @@ public class TelaPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form TelaPrincipal
      */
+    String nomearquivo = "";
+
+    void N_A(File nome) {
+
+        if (nome == null) {
+            setTitle("Editor de texto Implementando Huffaman");
+            return;
+        }
+
+        nomearquivo = nome.getAbsolutePath();
+        setTitle(nomearquivo);
+
+    }
     Eventos l = new Eventos(this);
-    Eventos1 l1 = new Eventos1(this);
 
     public TelaPrincipal() {
         initComponents();
-        setTitle("UnescRar");
+        //setTitle(a);
         //ImageIcon image = new ImageIcon("compa.png");
         //setIconImage(image.getImage());
-
     }
 
     /**
@@ -61,7 +73,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         btnovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/novo 50x50.png"))); // NOI18N
         btnovo.setText("Novo");
-        btnovo.addActionListener(l1);
+        btnovo.addActionListener(l);
         btnovo.setActionCommand("btnovo");
         btnovo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,7 +83,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         btabrir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/abrir 50x50.png"))); // NOI18N
         btabrir.setText("Abrir");
-        btabrir.addActionListener(l1);
+        btabrir.addActionListener(l);
         btabrir.setActionCommand("btabrir");
         btabrir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,7 +93,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         btcompactar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/compactar 50x50.png"))); // NOI18N
         btcompactar.setText("Compactar");
-        btcompactar.addActionListener(l1);
+        btcompactar.addActionListener(l);
         btcompactar.setActionCommand("btcompactar");
         btcompactar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,7 +103,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         btsalvacomo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/salvar como 50x50.png"))); // NOI18N
         btsalvacomo.setText("Salvar Como");
-        btsalvacomo.addActionListener(l1);
+        btsalvacomo.addActionListener(l);
         btsalvacomo.setActionCommand("btsalvacomo");
         btsalvacomo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,7 +143,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         btsalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/salvar 50x50.png"))); // NOI18N
         btsalvar.setText("Salvar");
-        btsalvar.addActionListener(l1);
+        btsalvar.addActionListener(l);
         btsalvar.setActionCommand("btsalvar");
         btsalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,7 +151,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jMenu.setText("Acessando Arquivos ");
+        jMenu.setText("Acessando Arquivo");
 
         MenuItem_novo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
         MenuItem_novo.setSelected(true);
