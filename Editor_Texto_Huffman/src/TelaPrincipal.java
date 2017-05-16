@@ -287,7 +287,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btsalvacomoActionPerformed
 
     private void btcompactarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btcompactarActionPerformed
-        // TODO add your handling code here:
+        Compactador compactador = new Compactador();
+        compactador.setVisible(true);
+        add(compactador);        
     }//GEN-LAST:event_btcompactarActionPerformed
 
     /**
